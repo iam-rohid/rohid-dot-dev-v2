@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout";
 import { CustomNextPage } from "@/types/next";
 import { Fragment } from "react";
 
-const BlogPage: CustomNextPage = () => {
+const PostsPage: CustomNextPage = () => {
   return (
     <Fragment>
       <PageHeader title="Blog" subtitle={`${0} blogs`} />
@@ -14,6 +14,6 @@ const BlogPage: CustomNextPage = () => {
   );
 };
 
-BlogPage.getLayout = (page) => <BaseLayout>{page}</BaseLayout>;
+PostsPage.getLayout = (page) => <BaseLayout>{page}</BaseLayout>;
 
-export default BlogPage;
+export default PostsPage;

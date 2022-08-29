@@ -1,8 +1,8 @@
-import tagsData from "@/data/tags.json";
+import tags from "@/data/tags";
 import type { Tag } from "@/models/tag";
 
 const getTagFromSlug = (slug: string) => {
-  const storeTag = tagsData.find((tag) => tag.slug === slug);
+  const storeTag = tags.find((tag) => tag.slug === slug);
 
   const tag: Tag = {
     title: slug,

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { profilePic } from "@/data/site.json";
+import { profilePic } from "@/data/site";
 import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
@@ -12,6 +12,7 @@ const Hero = () => {
           layout="fill"
           objectFit="cover"
           className="absolute inset-0 object-cover"
+          priority
         />
       </div>
 

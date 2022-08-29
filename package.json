@@ -9,16 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.4",
     "clsx": "^1.2.1",
+    "contentlayer": "^0.2.7",
+    "date-fns": "^2.29.2",
     "jotai": "^1.8.1",
+    "moment": "^2.29.4",
     "next": "12.2.5",
+    "next-contentlayer": "^0.2.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "reading-time": "^1.5.0",
+    "slug": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/slug": "^5.0.3",
     "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",

@@ -1,4 +1,4 @@
-import type { Post } from "@/models/post";
+import { Post } from "@/contentlayer/generated";
 import getTagsFromSlugs from "./getTagsFromSlugs";
 
 export default function getTagsFromPosts(posts: Post[]) {

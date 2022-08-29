@@ -1,4 +1,4 @@
-import { mainMenu } from "@/data/site.json";
+import { mainMenu } from "@/data/site";
 import { themeAtom } from "@/stores/theme";
 import clsx from "clsx";
 import { useAtom } from "jotai";

@@ -1,4 +1,4 @@
-import { socialLinks } from "@/data/site.json";
+import { socialLinks } from "@/data/site";
 import Link from "next/link";
 
 const SocialLinks = () => {
