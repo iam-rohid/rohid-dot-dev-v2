@@ -1,0 +1,55 @@
+{
+  "mainMenu": [
+    {
+      "label": "Home",
+      "href": "/",
+      "match": "^/$"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog",
+      "match": "^/blog/?.*"
+    },
+    {
+      "label": "Tags",
+      "href": "/tags",
+      "match": "^/tags/?.*"
+    },
+    {
+      "label": "Newsletter",
+      "href": "/newsletter",
+      "match": "^/newsletter/?.*"
+    },
+    {
+      "label": "About",
+      "href": "/about",
+      "match": "^/about/?.*"
+    }
+  ],
+  "socialLinks": [
+    {
+      "label": "Github",
+      "href": "https://github.com",
+      "icon": "fa-github"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com",
+      "icon": "fa-twitter"
+    },
+    {
+      "label": "Linked In",
+      "href": "https://linkedin.com",
+      "icon": "fa-linkedin"
+    },
+    {
+      "label": "YouTube",
+      "href": "https://youtube.com",
+      "icon": "fa-youtube"
+    }
+  ],
+  "profilePic": {
+    "url": "/images/profile_pic.jpg",
+    "alt": "Profile Pic"
+  }
+}

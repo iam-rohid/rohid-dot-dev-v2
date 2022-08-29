@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./fontawesome/css/fontawesome.css";
+@import "./fontawesome/css/brands.css";
+@import "./fontawesome/css/solid.css";
+
+.dark {
+  color-scheme: dark;
+}
