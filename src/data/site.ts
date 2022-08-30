@@ -25,6 +25,7 @@ export const mainMenu = [
     match: "^/about/?.*",
   },
 ];
+
 export const socialLinks = [
   {
     label: "Github",
@@ -47,13 +48,22 @@ export const socialLinks = [
     icon: "fa-youtube",
   },
 ];
+
 export const profilePic = {
   url: "/images/profile_pic.jpg",
   alt: "Profile Pic",
 };
+
 export const featuredPosts = [
-  "nextjs-with-typescript",
-  "nextjs-setup-with-typescript-tailwind-css",
-  "my-third-post",
+  "next-js-setup-with-typescript-and-tailwindcss",
+  "next-js-with-typescript",
+  "top-10-vs-code-extensions-for-react",
 ];
-export const featuredTags = ["typescript", "next-js"];
+
+export const featuredTags = [
+  "typescript",
+  "next-js",
+  "react",
+  "firebase",
+  "supabase",
+];

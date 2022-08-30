@@ -1,10 +1,11 @@
-const tags = [
+import { Tag } from "@/models/tag";
+
+const tags: Partial<Tag>[] = [
   {
     slug: "typescript",
     title: "TypeScript",
     backgroundColor: "#0077C9",
     foregroundColor: "#ffffff",
-    weight: 20,
   },
   {
     slug: "firebase",
@@ -21,12 +22,21 @@ const tags = [
   {
     slug: "next-js",
     title: "Next.js",
-    weight: 30,
+    backgroundColor: "#000000",
+    foregroundColor: "#ffffff",
   },
   {
     slug: "react",
     title: "React",
-    weight: 9,
+    backgroundColor: "#63D7F4",
+    foregroundColor: "#000000",
+  },
+  {
+    slug: "supabase",
+    title: "Supabase",
+    backgroundColor: "#3ECD8D",
+    foregroundColor: "#ffffff",
   },
 ];
+
 export default tags;

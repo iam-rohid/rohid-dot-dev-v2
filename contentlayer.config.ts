@@ -1,10 +1,12 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import readingTime from "reading-time";
 import slug from "slug";
+import remarkToc from "remark-toc";
+import highlight from "rehype-highlight";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
-  filePathPattern: "blogs/**/*.mdx",
+  filePathPattern: "posts/**/*.mdx",
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
@@ -20,16 +22,16 @@ export const Post = defineDocumentType(() => ({
     },
     slug: {
       type: "string",
-      resolve: (doc) => slug(doc.title),
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, ""),
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: "src/contents",
+  contentDirPath: "contents",
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+    remarkPlugins: [remarkToc],
+    rehypePlugins: [highlight],
   },
 });

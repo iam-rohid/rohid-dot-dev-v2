@@ -30,7 +30,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
               <div className="flex items-center gap-4 mb-8">
                 <h1 className="flex-1 text-2xl font-bold">Recent Posts</h1>
                 <Link href={"/posts"}>
-                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50">
+                  <a className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 gap-2 flex items-center">
                     <span>See all</span>
                     <i className="fa-solid fa-chevron-right"></i>
                   </a>
@@ -53,10 +53,10 @@ const HomePage: CustomNextPage<Props> = (props) => {
                         href={`/posts/${item.slug}`}
                         className="font-semibold hover:text-blue-500 flex gap-2"
                       >
-                        <div className="text-gray-400 dark:text-gray-600 flex-1 line-clamp-2">
+                        <div className="text-gray-400 dark:text-gray-600 text-xl">
                           {i + 1}.
                         </div>
-                        <p>{item.title}</p>
+                        <p className="flex-1 line-clamp-2">{item.title}</p>
                       </a>
                     </li>
                   ))}
@@ -75,18 +75,18 @@ HomePage.getLayout = (page) => <BaseLayout>{page}</BaseLayout>;
 export default HomePage;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const tags = getTagsFromPosts(allPosts);
-  const blogs = allPosts.filter((blog) => !blog.draft);
-
-  const recentPosts = blogs
+  const posts = allPosts
+    .filter((post) => !post.draft)
     .sort((b1, b2) => b1.title.localeCompare(b2.title))
     .sort((b1, b2) => {
       return compareDesc(new Date(b1.publishedAt), new Date(b2.publishedAt));
-    })
-    .slice(0, 10);
+    });
+  const tags = getTagsFromPosts(posts);
+
+  const recentPosts = posts.slice(0, 10);
 
   const featuredPosts = SITE.featuredPosts
-    .map((slug) => blogs.find((post) => post.slug === slug)!)
+    .map((slug) => posts.find((post) => post.slug === slug)!)
     .filter(Boolean);
 
   const featuredTags = SITE.featuredTags

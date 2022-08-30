@@ -27,11 +27,11 @@ const PostPage: CustomNextPage<Props> = (props) => {
       />
       <main className="bg-white dark:bg-gray-800">
         <div className="max-w-4xl mx-auto px-4 flex gap-8">
-          <article className="prose dark:prose-invert max-w-none min-w-0 overflow-hidden flex-1 py-8">
+          <article className="prose dark:prose-invert max-w-none min-w-0 overflow-hidden flex-1 py-16">
             <MDXContent />
           </article>
           <aside className="w-56 hidden md:block">
-            <div className="space-y-8 max-h-screen overflow-y-auto sticky top-0 py-8">
+            <div className="space-y-8 max-h-screen overflow-y-auto sticky top-0 py-16">
               <TagsSection tags={tags} />
               {/* <TOCSection headings={headings} /> */}
             </div>
