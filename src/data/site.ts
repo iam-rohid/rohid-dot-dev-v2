@@ -29,22 +29,22 @@ export const mainMenu = [
 export const socialLinks = [
   {
     label: "Github",
-    href: "https://github.com",
+    href: "https://github.com/rohid-dev",
     icon: "fa-github",
   },
   {
     label: "Twitter",
-    href: "https://twitter.com",
+    href: "https://twitter.com/rohid_dev",
     icon: "fa-twitter",
   },
   {
     label: "Linked In",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/md-rohidul-islam-04a655229",
     icon: "fa-linkedin",
   },
   {
     label: "YouTube",
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/channel/UC3fyatEjSzRkzt_Wj1sg1hw",
     icon: "fa-youtube",
   },
 ];
