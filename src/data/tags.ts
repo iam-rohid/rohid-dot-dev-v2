@@ -20,7 +20,7 @@ const tags: Partial<Tag>[] = [
     foregroundColor: "#ffffff",
   },
   {
-    slug: "next-js",
+    slug: "nextjs",
     title: "Next.js",
     backgroundColor: "#000000",
     foregroundColor: "#ffffff",
@@ -28,6 +28,12 @@ const tags: Partial<Tag>[] = [
   {
     slug: "react",
     title: "React",
+    backgroundColor: "#63D7F4",
+    foregroundColor: "#000000",
+  },
+  {
+    slug: "react-native",
+    title: "React Native",
     backgroundColor: "#63D7F4",
     foregroundColor: "#000000",
   },

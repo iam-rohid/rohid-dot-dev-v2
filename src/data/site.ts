@@ -55,14 +55,14 @@ export const profilePic = {
 };
 
 export const featuredPosts = [
-  "next-js-setup-with-typescript-and-tailwindcss",
-  "next-js-with-typescript",
-  "top-10-vs-code-extensions-for-react",
+  "nextjs-setup-with-typescript-and-tailwindcss",
+  "nextjs-with-typescript",
+  "top-10-vscode-extensions-for-react",
 ];
 
 export const featuredTags = [
   "typescript",
-  "next-js",
+  "nextjs",
   "react",
   "firebase",
   "supabase",
