@@ -1,7 +1,7 @@
 {
   "name": "rohid-dot-dev",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +13,6 @@
     "contentlayer": "latest",
     "date-fns": "^2.29.2",
     "jotai": "^1.8.1",
-    "moment": "^2.29.4",
     "next": "12.2.5",
     "next-contentlayer": "latest",
     "react": "18.2.0",

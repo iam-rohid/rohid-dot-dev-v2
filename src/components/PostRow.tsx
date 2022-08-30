@@ -1,6 +1,6 @@
 import { type Post } from "@/contentlayer/generated";
 import getTagsFromSlugs from "@/utils/getTagsFromSlugs";
-import moment from "moment";
+import { format, formatDistance, formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { useMemo } from "react";
 import TagItem from "./TagItem";
@@ -16,17 +16,17 @@ const PostRow = (props: Props) => {
     <article className="relative flex flex-col gap-1">
       <Link href={`/posts/${post.slug}`}>
         <a className="group">
-          <h3 className="line-clamp-2 text-xl font-bold leading-relaxed group-hover:text-blue-500">
+          <h3 className="text-xl font-bold leading-relaxed line-clamp-2 group-hover:text-blue-500">
             {post.title}
           </h3>
-          <p className="line-clamp-2 text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 line-clamp-2 dark:text-gray-300">
             {post.description}
           </p>
         </a>
       </Link>
       <div className="flex flex-row flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-300">
         <p>
-          <span>{moment(post.publishedAt).format("MMM DD, YYYY")}</span>{" "}
+          <span>{formatDistanceToNow(new Date(post.publishedAt))}</span>{" "}
           <span>•</span> <span>{post.readingTime}</span>
         </p>
         {tags.map((tag) => (

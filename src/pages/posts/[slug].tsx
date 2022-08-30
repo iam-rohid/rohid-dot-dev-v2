@@ -2,12 +2,12 @@ import PageHeader from "@/components/PageHeader";
 import { allPosts, Post } from "@/contentlayer/generated";
 import { CustomNextPage } from "@/types/next";
 import { GetStaticPaths, GetStaticProps } from "next";
-import moment from "moment";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
 import getTagsFromSlugs from "@/utils/getTagsFromSlugs";
 import TagsSection from "@/components/TagsSection";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { formatDistanceToNow } from "date-fns";
 
 interface Props {
   post: Post;
@@ -21,17 +21,17 @@ const PostPage: CustomNextPage<Props> = (props) => {
     <>
       <PageHeader
         title={post.title}
-        subtitle={`${moment(post.publishedAt).format("MMM DD, YYYY")} • ${
+        subtitle={`${formatDistanceToNow(new Date(post.publishedAt))} • ${
           post.readingTime
         }`}
       />
       <main className="bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 flex gap-8">
-          <article className="prose dark:prose-invert max-w-none min-w-0 overflow-hidden flex-1 py-16">
+        <div className="mx-auto flex max-w-4xl gap-8 px-4">
+          <article className="prose min-w-0 max-w-none flex-1 overflow-hidden py-16 dark:prose-invert">
             <MDXContent />
           </article>
-          <aside className="w-56 hidden md:block">
-            <div className="space-y-8 max-h-screen overflow-y-auto sticky top-0 py-16">
+          <aside className="hidden w-56 md:block">
+            <div className="sticky top-0 max-h-screen space-y-8 overflow-y-auto py-16">
               <TagsSection tags={tags} />
               {/* <TOCSection headings={headings} /> */}
             </div>
