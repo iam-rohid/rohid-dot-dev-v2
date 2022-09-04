@@ -1,5 +1,5 @@
 import PageHeader from "@/components/PageHeader";
-import { allPosts, Post } from "@/contentlayer/generated";
+import { Post } from "@/contentlayer/generated";
 import { CustomNextPage } from "@/types/next";
 import { GetStaticPaths, GetStaticProps } from "next";
 import BaseLayout from "@/layouts/BaseLayout";
@@ -8,6 +8,7 @@ import getTagsFromSlugs from "@/utils/getTagsFromSlugs";
 import TagsSection from "@/components/TagsSection";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { formatDistanceToNow } from "date-fns";
+import allPosts from "@/utils/allPosts";
 
 interface Props {
   post: Post;
@@ -21,9 +22,9 @@ const PostPage: CustomNextPage<Props> = (props) => {
     <>
       <PageHeader
         title={post.title}
-        subtitle={`${formatDistanceToNow(new Date(post.publishedAt))} • ${
-          post.readingTime
-        }`}
+        subtitle={`${post.draft ? "Draft • " : ""}${formatDistanceToNow(
+          new Date(post.date)
+        )} • ${post.readingTime}`}
       />
       <main className="bg-white dark:bg-gray-800">
         <div className="mx-auto flex max-w-4xl gap-8 px-4">

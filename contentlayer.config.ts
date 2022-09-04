@@ -1,6 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import readingTime from "reading-time";
-import slug from "slug";
 import remarkToc from "remark-toc";
 import highlight from "rehype-highlight";
 
@@ -10,8 +9,8 @@ export const Post = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
-    description: { type: "string", required: true },
-    publishedAt: { type: "string", required: true },
+    description: { type: "string", required: false },
+    date: { type: "string", required: true },
     tags: { type: "list", required: true, of: [{ type: "string" }] },
     draft: { type: "boolean", required: true },
   },

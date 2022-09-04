@@ -1,6 +1,6 @@
 import { type Post } from "@/contentlayer/generated";
 import getTagsFromSlugs from "@/utils/getTagsFromSlugs";
-import { format, formatDistance, formatDistanceToNow } from "date-fns";
+import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 import { useMemo } from "react";
 import TagItem from "./TagItem";
@@ -24,10 +24,15 @@ const PostRow = (props: Props) => {
           </p>
         </a>
       </Link>
-      <div className="flex flex-row flex-wrap gap-2 text-sm text-gray-600 dark:text-gray-300">
+      <div className="flex flex-row flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+        {post.draft ? (
+          <p className="rounded-full border border-gray-200 px-2 py-0.5 text-xs">
+            Draft
+          </p>
+        ) : null}
         <p>
-          <span>{formatDistanceToNow(new Date(post.publishedAt))}</span>{" "}
-          <span>•</span> <span>{post.readingTime}</span>
+          <span>{formatDistanceToNow(new Date(post.date))}</span> <span>•</span>{" "}
+          <span>{post.readingTime}</span>
         </p>
         {tags.map((tag) => (
           <TagItem key={tag.slug} tag={tag} size="sm" />

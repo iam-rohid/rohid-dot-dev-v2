@@ -28,10 +28,10 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className="h-16">
-        <div className="max-w-4xl flex items-center h-full mx-auto px-4 gap-2">
+      <nav className="h-14">
+        <div className="mx-auto flex h-full max-w-4xl items-center gap-2 px-4">
           <button
-            className="flex md:hidden h-10 w-10 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none"
+            className="flex h-9 w-9 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none md:hidden"
             onClick={() => {
               setShowSidebar(!showSidebar);
             }}
@@ -44,17 +44,17 @@ const NavBar = () => {
             ></i>
           </button>
 
-          <ul className="items-center gap-1 hidden md:flex">
+          <ul className="hidden items-center gap-1 md:flex">
             {links.map((link) => (
               <li key={link.href}>
                 <Link href={link.href}>
                   <a
                     className={clsx(
-                      "h-10 px-4 rounded-md flex items-center justify-center shadow-blue-900/10",
+                      "flex h-9 items-center justify-center rounded-md px-4 shadow-blue-900/10",
                       {
-                        "bg-white dark:bg-gray-800 dark:text-blue-500 text-blue-500 shadow-lg dark:shadow-none":
+                        "bg-white text-blue-500 shadow-lg dark:bg-gray-800 dark:text-blue-500 dark:shadow-none":
                           link.isActive,
-                        "hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white":
+                        "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white":
                           !link.isActive,
                       }
                     )}
@@ -66,11 +66,11 @@ const NavBar = () => {
             ))}
           </ul>
 
-          <div className="flex items-center justify-end gap-2 flex-1">
+          <div className="flex flex-1 items-center justify-end gap-2">
             <SearchBar />
 
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none"
+              className="flex h-9 w-9 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none"
               onClick={() => {
                 setTheme({
                   colorScheme: theme.colorScheme == "dark" ? "light" : "dark",
@@ -101,12 +101,12 @@ export default NavBar;
 const SearchBar = () => {
   return (
     <form className="w-full max-w-[280px] flex-1">
-      <div className="bg-white dark:bg-gray-800 gap-2 flex items-center h-10 rounded-md shadow-lg dark:shadow-none relative overflow-hidden shadow-blue-900/10 w-full">
+      <div className="relative flex h-9 w-full items-center gap-2 overflow-hidden rounded-md bg-white shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:shadow-none">
         <input
-          className="placeholder-gray-400 dark:placeholder-gray-600 bg-transparent flex-1 absolute inset-0 pl-12 pr-2 outline-none"
+          className="absolute inset-0 flex-1 bg-transparent pl-10 pr-2 placeholder-gray-400 outline-none dark:placeholder-gray-600"
           placeholder="Search"
         />
-        <span className="leading-6 text-lg absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 dark:text-gray-400">
+        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-lg leading-6 text-gray-600 dark:text-gray-300">
           <i className="fa-solid fa-magnifying-glass"></i>
         </span>
       </div>
