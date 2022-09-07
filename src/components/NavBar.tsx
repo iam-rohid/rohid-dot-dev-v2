@@ -67,10 +67,8 @@ const NavBar = () => {
           </ul>
 
           <div className="flex flex-1 items-center justify-end gap-2">
-            <SearchBar />
-
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 shadow-lg shadow-blue-900/10 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none"
+              className="flex h-9 w-9 items-center justify-center rounded-md bg-white text-lg leading-6 text-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:shadow-none"
               onClick={() => {
                 setTheme({
                   colorScheme: theme.colorScheme == "dark" ? "light" : "dark",

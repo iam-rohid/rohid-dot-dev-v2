@@ -23,7 +23,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
   return (
     <Fragment>
       <Hero />
-      <main className="bg-white py-16 dark:bg-gray-800">
+      <main>
         <div className="mx-auto max-w-4xl space-y-32 px-4">
           <div className="flex gap-8">
             <section className="flex-1">
