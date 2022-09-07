@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "label": "Home",
+      "link": "/",
+      "match": "^/$"
+    },
+    {
+      "label": "Blog",
+      "link": "/blog",
+      "match": "^/blog/?.*"
+    },
+    {
+      "label": "Projects",
+      "link": "/projects",
+      "match": "^/projects/?.*"
+    },
+    {
+      "label": "Newsletter",
+      "link": "/newsletter",
+      "match": "^/newsletter/?.*"
+    }
+  ]
+}

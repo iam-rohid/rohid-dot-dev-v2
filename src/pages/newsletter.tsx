@@ -8,7 +8,7 @@ const NewsletterPage: CustomNextPage = () => {
     <Fragment>
       <PageHeader title="Newsletter" />
       <main className="bg-white dark:bg-gray-800">
-        <div className="max-w-4xl px-4 mx-auto py-16"></div>
+        <div className="mx-auto max-w-4xl px-4 py-16"></div>
       </main>
     </Fragment>
   );

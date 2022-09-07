@@ -6,7 +6,7 @@ type Props = {
   links: {
     isActive: RegExpMatchArray | null;
     label: string;
-    href: string;
+    link: string;
     match: string;
   }[];
   open: boolean;
@@ -22,15 +22,15 @@ const Sidebar = (props: Props) => {
       <div className="absolute left-0 top-0 bottom-0 w-screen max-w-xs bg-gray-100 dark:bg-gray-900">
         <ul className="flex flex-col gap-1 p-4">
           {links.map((link) => (
-            <li key={link.href}>
-              <Link href={link.href}>
+            <li key={link.link}>
+              <Link href={link.link}>
                 <a
                   className={clsx(
-                    "py-2 px-4 rounded-md flex items-center shadow-blue-900/10",
+                    "flex items-center rounded-md py-2 px-4 shadow-blue-900/10",
                     {
-                      "bg-white dark:bg-gray-800 dark:text-blue-500 text-blue-500 shadow-lg dark:shadow-none":
+                      "bg-white text-blue-500 shadow-lg dark:bg-gray-800 dark:text-blue-500 dark:shadow-none":
                         link.isActive,
-                      "hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white":
+                      "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white":
                         !link.isActive,
                     }
                   )}

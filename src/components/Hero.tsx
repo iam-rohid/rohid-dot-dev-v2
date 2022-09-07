@@ -1,45 +1,41 @@
 import Image from "next/image";
-import { profilePic } from "@/data/site";
 import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
   return (
-    <div className="max-w-xl mx-auto px-4 text-center flex flex-col items-center gap-6 py-12 w-full">
-      <div className="relative w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-        <Image
-          src={profilePic.url}
-          alt={profilePic.alt}
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 object-cover"
-          priority
-        />
-      </div>
-
-      <h1 className="text-3xl font-black font-mono text-gray-700 dark:text-gray-200 leading-10">
-        Rohidul Islam
-      </h1>
-
-      <SocialLinks />
-
-      <form className="w-full">
-        <p className="pb-4 text-gray-600 dark:text-gray-400">
-          Get dev news on every Sunday for free!
-        </p>
-        <div className="bg-white dark:bg-gray-800 shadow-lg dark:shadow-none shadow-blue-900/10 rounded-lg overflow-hidden flex">
-          <input
-            type="text"
-            className="flex-1 w-full h-12 outline-none px-4 font-medium text-lg block bg-transparent placeholder:text-gray-400 dark:placeholder:text-gray-600"
-            placeholder="Enter your email address"
-          />
-          <div className="p-1.5">
-            <button className="bg-gray-800 text-white dark:bg-white dark:text-gray-900 font-medium px-4 rounded-md h-9 flex items-center justify-center">
-              Subscribe
+    <header className="my-32">
+      <div className="mx-auto flex max-w-4xl flex-col-reverse items-center gap-16 px-8 md:flex-row">
+        <div className="flex flex-1 flex-col items-center text-center md:items-start md:text-left">
+          <h1 className="leading-loose">
+            <span className="text-5xl font-bold">Hi 👋</span>
+            <br />
+            <span className="bg-gradient-to-br from-priamry-300 to-priamry-500 bg-clip-text text-6xl font-black text-transparent md:text-7xl">
+              I&apos;m Rohid
+            </span>
+          </h1>
+          <p className="my-4 text-2xl text-gray-300">
+            I&apos;m a self-thought developer &amp; designer
+          </p>
+          <div className="mt-6 flex flex-col-reverse items-center gap-8 sm:flex-row">
+            <button className="h-10 rounded-md px-4 font-medium text-priamry-400 ring-2 ring-priamry-400 transition-all duration-300 hover:bg-priamry-400 hover:text-gray-900 hover:ring-0">
+              Contact Me
             </button>
+            <SocialLinks />
           </div>
         </div>
-      </form>
-    </div>
+
+        <div className="relative h-40 w-40">
+          <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-priamry-300 to-priamry-500"></div>
+          <Image
+            src="https://pbs.twimg.com/profile_images/1481868973537132544/0NSx-X8V_400x400.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="Rohid - Profile Pic"
+            className="overflow-hidden rounded-full"
+          />
+        </div>
+      </div>
+    </header>
   );
 };
 

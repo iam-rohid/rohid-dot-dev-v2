@@ -1,16 +1,16 @@
-import Hero from "@/components/Hero";
-import PostRow from "@/components/PostRow";
-import * as SITE from "@/data/site";
+import featuredData from "@/data/featured.json";
 import type { Post } from "@/contentlayer/generated";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
 import { CustomNextPage } from "@/types/next";
 import { GetStaticProps } from "next";
-import { Fragment } from "react";
-import TagsSection from "@/components/TagsSection";
 import getTagsFromPosts from "@/utils/getTagsFromPosts";
-import Link from "next/link";
 import allPosts from "@/utils/allPosts";
+import Image from "next/image";
+import Link from "next/link";
+import { FaChevronRight } from "react-icons/fa";
+import { format } from "date-fns";
+import Hero from "@/components/Hero";
 
 interface Props {
   recentPosts: Post[];
@@ -21,52 +21,138 @@ interface Props {
 const HomePage: CustomNextPage<Props> = (props) => {
   const { recentPosts, featuredTags, featuredPosts } = props;
   return (
-    <Fragment>
+    <>
       <Hero />
-      <main>
-        <div className="mx-auto max-w-4xl space-y-32 px-4">
-          <div className="flex gap-8">
-            <section className="flex-1">
-              <div className="mb-8 flex items-center gap-4">
-                <h1 className="flex-1 text-2xl font-bold">Recent Posts</h1>
-                <Link href={"/posts"}>
-                  <a className="flex items-center gap-2 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-                    <span>See all</span>
-                    <i className="fa-solid fa-chevron-right"></i>
+
+      <main className="my-16">
+        <div className="mx-auto w-full max-w-4xl space-y-16 px-8">
+          <section id="featured-posts">
+            <div className="mb-8 flex items-center">
+              <h2 className="flex-1 truncate text-2xl font-medium">
+                Featured Posts
+              </h2>
+              <Link href={"/blog"}>
+                <a className="group flex items-center gap-1 transition-colors hover:text-priamry-400">
+                  See All
+                  <span className="transition-transform group-hover:translate-x-1">
+                    <FaChevronRight />
+                  </span>
+                </a>
+              </Link>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {featuredPosts.map((post) => (
+                <article key={post._id}>
+                  <Link href={`/blog/${post.slug}`}>
+                    <a className="block overflow-hidden rounded-lg">
+                      <figure className="relative aspect-video w-full">
+                        <Image
+                          src={
+                            post.coverPhoto ||
+                            "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                          }
+                          alt={`${post.title} - Thumbnail`}
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                      </figure>
+                    </a>
+                  </Link>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    className="transition-colors hover:text-priamry-400"
+                  >
+                    <h3 className="my-2 text-xl font-bold md:text-2xl">
+                      {post.title}
+                    </h3>
+                    <p className="my-1 text-gray-300 line-clamp-2">
+                      {post.description || "No Description"}
+                    </p>
                   </a>
-                </Link>
-              </div>
-              <div className="space-y-6">
-                {recentPosts.map((post) => (
-                  <PostRow key={post._id} post={post} />
-                ))}
-              </div>
-            </section>
-            <aside className="w-72 space-y-16">
-              <TagsSection title="Featured Tags" tags={featuredTags} />
-              <section id="popular-posts">
-                <h1 className="mb-4 text-xl font-bold">Featured Posts</h1>
-                <ul className="space-y-4">
-                  {featuredPosts.map((item, i) => (
-                    <li key={item._id} className="flex gap-2">
-                      <a
-                        href={`/posts/${item.slug}`}
-                        className="flex gap-2 font-semibold hover:text-blue-500"
-                      >
-                        <div className="text-xl text-gray-400 dark:text-gray-600">
-                          {i + 1}.
-                        </div>
-                        <p className="flex-1 line-clamp-2">{item.title}</p>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            </aside>
-          </div>
+                  <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-gray-300">
+                    <span>{format(new Date(post.date), "MMM dd, yyy")}</span>
+                    <span>·</span>
+                    <span>{post.readingTime}</span>
+                    <span>·</span>
+                    {post.tags.map((tag) => (
+                      <Link key={tag} href={`/tags/${tag}`}>
+                        <a className="hover:text-priamry-400">#{tag}</a>
+                      </Link>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section id="recent-posts">
+            <div className="mb-8 flex items-center">
+              <h2 className="flex-1 truncate text-2xl font-medium">
+                Recent Posts
+              </h2>
+              <Link href={"/blog"}>
+                <a className="group flex items-center gap-1 transition-colors hover:text-priamry-400">
+                  See All
+                  <span className="transition-transform group-hover:translate-x-1">
+                    <FaChevronRight />
+                  </span>
+                </a>
+              </Link>
+            </div>
+
+            <div className="space-y-8">
+              {recentPosts.map((post) => (
+                <article
+                  key={post._id}
+                  className="flex items-center gap-4 md:gap-8"
+                >
+                  <div className="flex-1">
+                    <a
+                      href={`/blog/${post.slug}`}
+                      className="transition-colors hover:text-priamry-400"
+                    >
+                      <h3 className="my-2 text-xl font-bold md:text-2xl">
+                        {post.title}
+                      </h3>
+                      <p className="my-1 text-gray-300 line-clamp-2">
+                        {post.description || "No Description"}
+                      </p>
+                    </a>
+                    <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-gray-300">
+                      <span>{format(new Date(post.date), "MMM dd, yyy")}</span>
+                      <span>·</span>
+                      <span>{post.readingTime}</span>
+                      <span>·</span>
+                      {post.tags.map((tag) => (
+                        <Link key={tag} href={`/tags/${tag}`}>
+                          <a className="hover:text-priamry-400">#{tag}</a>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <Link href={`/blog/${post.slug}`}>
+                    <a className="block w-20 overflow-hidden rounded-lg sm:w-32 md:w-56 lg:w-64">
+                      <figure className="relative aspect-square w-full md:aspect-video">
+                        <Image
+                          src={
+                            post.coverPhoto ||
+                            "https://images.unsplash.com/photo-1548094990-c16ca90f1f0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"
+                          }
+                          alt={`${post.title} - Thumbnail`}
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                      </figure>
+                    </a>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
         </div>
       </main>
-    </Fragment>
+    </>
   );
 };
 
@@ -76,14 +162,13 @@ export default HomePage;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const tags = getTagsFromPosts(allPosts);
-
   const recentPosts = allPosts.slice(0, 10);
 
-  const featuredPosts = SITE.featuredPosts
+  const featuredPosts = featuredData.posts
     .map((slug) => allPosts.find((post) => post.slug === slug)!)
     .filter(Boolean);
 
-  const featuredTags = SITE.featuredTags
+  const featuredTags = featuredData.tags
     .map((slug) => tags.find((tag) => tag.slug === slug)!)
     .filter(Boolean);
 

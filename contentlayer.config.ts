@@ -10,9 +10,10 @@ export const Post = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     description: { type: "string", required: false },
+    coverPhoto: { type: "string", required: false },
     date: { type: "string", required: true },
     tags: { type: "list", required: true, of: [{ type: "string" }] },
-    draft: { type: "boolean", required: true },
+    draft: { type: "boolean", required: false },
   },
   computedFields: {
     readingTime: {
