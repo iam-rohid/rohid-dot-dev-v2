@@ -17,7 +17,7 @@ const tags: Partial<Tag>[] = [
     slug: "tailwindcss",
     title: "Tailwind CSS",
     backgroundColor: "#38BDF8",
-    foregroundColor: "#ffffff",
+    foregroundColor: "#000000",
   },
   {
     slug: "nextjs",
