@@ -30,8 +30,8 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
             </div>
           </div>
           <Link href={`/blog/${post.slug}`}>
-            <a className="block w-20 sm:w-32 md:w-48">
-              <figure className="relative aspect-square w-full overflow-hidden rounded-lg md:aspect-video">
+            <a className="block w-20 sm:w-32 lg:w-48">
+              <figure className="relative aspect-square w-full overflow-hidden rounded-lg lg:aspect-video">
                 <Image
                   src={
                     post.coverPhoto ||

@@ -35,8 +35,8 @@ const HomePage: CustomNextPage<Props> = (props) => {
             />
             <PostsGrid posts={featuredPosts} />
           </section>
-          <section className="flex gap-8">
-            <div className="flex-1">
+          <section className="grid grid-cols-3 gap-8">
+            <div className="col-span-3 md:col-span-2">
               <section id="recent-posts">
                 <SectionTitleBar
                   title="Recent Posts"
@@ -48,7 +48,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
                 <PostsList posts={recentPosts} />
               </section>
             </div>
-            <aside className="hidden h-32 w-64 space-y-8 lg:block">
+            <aside className="col-span-1 hidden space-y-8 md:block lg:w-64">
               <section id="featured-tags">
                 <SectionTitleBar title="Featured Tags" />
                 <TagsList tags={featuredTags} />

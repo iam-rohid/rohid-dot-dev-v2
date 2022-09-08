@@ -43,6 +43,24 @@ const tags: Partial<Tag>[] = [
     backgroundColor: "#3ECD8D",
     foregroundColor: "#ffffff",
   },
+  {
+    slug: "vscode",
+    title: "VS Code",
+    backgroundColor: "#3EA6EB",
+    foregroundColor: "#ffffff",
+  },
+  {
+    slug: "contentlayer",
+    title: "Contentlayer",
+    backgroundColor: "#7C3AED",
+    foregroundColor: "#ffffff",
+  },
+  {
+    slug: "flutter",
+    title: "Flutter",
+    backgroundColor: "#5AC2F0",
+    foregroundColor: "#000000",
+  },
 ];
 
 export default tags;
