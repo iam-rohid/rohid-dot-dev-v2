@@ -18,7 +18,15 @@ const SEO = (props: SEOProps) => {
   );
   const TITLE = useMemo(() => `${title ? `${title} - ` : ""}Rohid`, [title]);
   const DESCRIPTION = useMemo(() => description, [description]);
-  const IMAGE = useMemo(() => image, [image]);
+  const IMAGE = useMemo(
+    () =>
+      image
+        ? image.startsWith("/")
+          ? window.location.origin + image
+          : image
+        : undefined,
+    [image]
+  );
   return (
     <Head>
       <title>{TITLE}</title>
