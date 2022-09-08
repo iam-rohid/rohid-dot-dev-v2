@@ -1,5 +1,4 @@
-import PageHeader from "@/components/PageHeader";
-import TagItem from "@/components/TagItem";
+import TagsList from "@/components/TagsList";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
 import { CustomNextPage } from "@/types/next";
@@ -15,20 +14,21 @@ interface Props {
 const TagsPage: CustomNextPage<Props> = (props) => {
   const { tags } = props;
   return (
-    <Fragment>
-      <PageHeader title="Tags" subtitle={`${tags.length} tags`} />
-      <main className="bg-white dark:bg-gray-800">
-        <div className="mx-auto max-w-4xl px-4 py-16">
-          <ul className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <li key={tag.slug}>
-                <TagItem tag={tag} size="lg" />
-              </li>
-            ))}
-          </ul>
+    <main>
+      <header className="my-16">
+        <div className="mx-auto w-full max-w-3xl px-8">
+          <h1 className="mb-1 text-3xl font-bold">Tag</h1>
+          <p className="text-gray-300">
+            Total <b>{tags.length}</b> tags
+          </p>
         </div>
-      </main>
-    </Fragment>
+      </header>
+      <section className="my-16">
+        <div className="mx-auto w-full max-w-3xl px-8">
+          <TagsList tags={tags} />
+        </div>
+      </section>
+    </main>
   );
 };
 

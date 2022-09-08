@@ -190,8 +190,8 @@ const PostsPage: CustomNextPage<Props> = (props) => {
           </form>
         </div>
       </header>
-      <div className="mx-auto my-16 w-full max-w-3xl space-y-16 px-8">
-        <section className="all">
+      <section className="my-16">
+        <div className="mx-auto w-full max-w-3xl px-8">
           <SectionTitleBar
             title={
               !!searchText
@@ -211,8 +211,8 @@ const PostsPage: CustomNextPage<Props> = (props) => {
             }
           />
           <PostsList posts={filterdPosts} />
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 };

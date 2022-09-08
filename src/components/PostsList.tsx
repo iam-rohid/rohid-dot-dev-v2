@@ -7,13 +7,11 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className="space-y-8">
       {posts.map((post) => (
-        <article key={post._id} className="flex gap-4 md:gap-8">
+        <article key={post._id} className="flex gap-4">
           <div className="flex-1">
             <Link href={`/blog/${post.slug}`}>
               <a className="transition-colors hover:text-priamry-400">
-                <h3 className="my-2 text-xl font-bold md:text-2xl">
-                  {post.title}
-                </h3>
+                <h3 className="my-2 text-xl font-semibold">{post.title}</h3>
                 <p className="my-1 text-gray-300 line-clamp-2">
                   {post.description || "No Description"}
                 </p>

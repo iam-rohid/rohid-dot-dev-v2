@@ -16,6 +16,11 @@
       "match": "^/projects/?.*"
     },
     {
+      "label": "Tags",
+      "link": "/tags",
+      "match": "^/tags/?.*"
+    },
+    {
       "label": "Newsletter",
       "link": "/newsletter",
       "match": "^/newsletter/?.*"

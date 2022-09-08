@@ -1,5 +1,3 @@
-import PageHeader from "@/components/PageHeader";
-import PostRow from "@/components/PostRow";
 import { Post } from "@/contentlayer/generated";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
@@ -8,7 +6,6 @@ import allPosts from "@/utils/allPosts";
 import getTagFromSlug from "@/utils/getTagFromSlug";
 import getTagsFromPosts from "@/utils/getTagsFromPosts";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Fragment } from "react";
 
 interface Props {
   tag: Tag;
@@ -16,20 +13,7 @@ interface Props {
 }
 
 const TagPage: CustomNextPage<Props> = ({ tag, posts }) => {
-  return (
-    <Fragment>
-      <PageHeader title={tag.title} subtitle={`#${tag.slug}`} />
-      <main className="bg-white dark:bg-gray-800">
-        <div className="mx-auto max-w-4xl px-4 py-16">
-          <div className="space-y-6">
-            {posts.map((post) => (
-              <PostRow key={post._id} post={post} />
-            ))}
-          </div>
-        </div>
-      </main>
-    </Fragment>
-  );
+  return <></>;
 };
 
 TagPage.getLayout = (page) => <BaseLayout>{page}</BaseLayout>;
