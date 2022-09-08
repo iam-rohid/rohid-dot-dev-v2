@@ -26,7 +26,7 @@ const SEO = (props: SEOProps) => {
         ? image.startsWith("/")
           ? `https://rohid.dev${image}`
           : image
-        : undefined,
+        : `https://rohid.dev/images/profile-pic.jpg`,
     [image]
   );
   return (
