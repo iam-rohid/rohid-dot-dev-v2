@@ -22,12 +22,12 @@ const PostGrid = ({ posts }: { posts: Post[] }) => {
               </figure>
             </a>
           </Link>
-          <a
-            href={`/blog/${post.slug}`}
-            className="transition-colors hover:text-priamry-400"
-          >
-            <h3 className="my-2 text-xl font-bold">{post.title}</h3>
-          </a>
+
+          <Link href={`/blog/${post.slug}`}>
+            <a className="transition-colors hover:text-priamry-400">
+              <h3 className="my-2 text-xl font-bold">{post.title}</h3>
+            </a>
+          </Link>
           <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-gray-300">
             <span>{post.readingTime}</span>
             <span>·</span>

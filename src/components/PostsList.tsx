@@ -9,17 +9,16 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
       {posts.map((post) => (
         <article key={post._id} className="flex gap-4 md:gap-8">
           <div className="flex-1">
-            <a
-              href={`/blog/${post.slug}`}
-              className="transition-colors hover:text-priamry-400"
-            >
-              <h3 className="my-2 text-xl font-bold md:text-2xl">
-                {post.title}
-              </h3>
-              <p className="my-1 text-gray-300 line-clamp-2">
-                {post.description || "No Description"}
-              </p>
-            </a>
+            <Link href={`/blog/${post.slug}`}>
+              <a className="transition-colors hover:text-priamry-400">
+                <h3 className="my-2 text-xl font-bold md:text-2xl">
+                  {post.title}
+                </h3>
+                <p className="my-1 text-gray-300 line-clamp-2">
+                  {post.description || "No Description"}
+                </p>
+              </a>
+            </Link>
             <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-gray-300">
               <span>{format(new Date(post.date), "MMM dd, yyy")}</span>
               <span>·</span>
