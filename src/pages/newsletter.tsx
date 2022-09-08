@@ -7,6 +7,7 @@ const NewsletterPage: CustomNextPage = () => {
       <section className="my-16">
         <div className="mx-auto w-full max-w-3xl px-8">
           <iframe
+            title="Substack Newsletter"
             src="https://rohid.substack.com/embed"
             style={{
               width: "100%",

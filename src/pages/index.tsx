@@ -7,7 +7,7 @@ import { GetStaticProps } from "next";
 import getTagsFromPosts from "@/utils/getTagsFromPosts";
 import allPosts from "@/utils/allPosts";
 import Hero from "@/components/Hero";
-import PostGrid from "@/components/PostGrid";
+import PostsGrid from "@/components/PostsGrid";
 import PostsList from "@/components/PostsList";
 import SectionTitleBar from "@/components/SectionTitleBar";
 import TagsList from "@/components/TagsList";
@@ -33,7 +33,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
                 href: "/blog",
               }}
             />
-            <PostGrid posts={featuredPosts} />
+            <PostsGrid posts={featuredPosts} />
           </section>
           <section className="flex gap-8">
             <div className="flex-1">
@@ -57,6 +57,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
           </section>
           <section>
             <iframe
+              title="Substack Newsletter"
               src="https://rohid.substack.com/embed"
               style={{
                 width: "100%",

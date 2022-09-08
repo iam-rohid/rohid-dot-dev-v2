@@ -21,7 +21,15 @@ function MyApp({ Component, pageProps }: CustomAppProps) {
     <Fragment>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home</title>
+        <title>Rohid</title>
+        <meta
+          name="description"
+          content="I'm a self-thought developer &amp; designer"
+        />
+        <meta
+          name="keywords"
+          content="rohid,dev,rohidul islam,programmer,coding,developer,react,nextjs,typescript,blog,portfolio"
+        />
       </Head>
       {getLayout(<Component {...pageProps} />)}
     </Fragment>

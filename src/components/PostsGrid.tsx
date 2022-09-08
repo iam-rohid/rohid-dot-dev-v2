@@ -2,7 +2,7 @@ import { Post } from "@/contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
 
-const PostGrid = ({ posts }: { posts: Post[] }) => {
+const PostsGrid = ({ posts }: { posts: Post[] }) => {
   return (
     <div className="grid gap-8 md:grid-cols-3">
       {posts.map((post) => (
@@ -18,6 +18,7 @@ const PostGrid = ({ posts }: { posts: Post[] }) => {
                   alt={`${post.title} - Thumbnail`}
                   layout="fill"
                   objectFit="cover"
+                  className="absolute inset-0 h-full w-full"
                 />
               </figure>
             </a>
@@ -43,4 +44,4 @@ const PostGrid = ({ posts }: { posts: Post[] }) => {
   );
 };
 
-export default PostGrid;
+export default PostsGrid;
