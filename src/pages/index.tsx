@@ -10,7 +10,6 @@ import Hero from "@/components/Hero";
 import PostGrid from "@/components/PostGrid";
 import PostsList from "@/components/PostsList";
 import SectionTitleBar from "@/components/SectionTitleBar";
-import Link from "next/link";
 import TagsList from "@/components/TagsList";
 
 interface Props {
@@ -36,7 +35,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
             />
             <PostGrid posts={featuredPosts} />
           </section>
-          <div className="flex gap-8">
+          <section className="flex gap-8">
             <div className="flex-1">
               <section id="recent-posts">
                 <SectionTitleBar
@@ -55,7 +54,19 @@ const HomePage: CustomNextPage<Props> = (props) => {
                 <TagsList tags={featuredTags} />
               </section>
             </aside>
-          </div>
+          </section>
+          <section>
+            <iframe
+              src="https://rohid.substack.com/embed"
+              style={{
+                width: "100%",
+                height: 320,
+                backgroundColor: "transparent",
+              }}
+              frameBorder="0"
+              scrolling="no"
+            />
+          </section>
         </div>
       </main>
     </>

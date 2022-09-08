@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
@@ -17,9 +18,14 @@ const Hero = () => {
             I&apos;m a self-thought developer &amp; designer
           </p>
           <div className="mt-6 flex flex-col-reverse items-center gap-8 sm:flex-row">
-            <button className="h-10 rounded-md px-4 font-medium text-priamry-400 ring-2 ring-priamry-400 transition-all duration-300 hover:bg-priamry-400 hover:text-gray-900 hover:ring-0">
+            <a
+              href="mailto:rohidul209@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-10 items-center justify-center rounded-md px-4 font-medium text-priamry-400 ring-2 ring-priamry-400 transition-all duration-300 hover:bg-priamry-400 hover:text-gray-900 hover:ring-0"
+            >
               Contact Me
-            </button>
+            </a>
             <SocialLinks />
           </div>
         </div>

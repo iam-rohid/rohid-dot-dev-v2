@@ -5,7 +5,6 @@ import { CustomNextPage } from "@/types/next";
 import allPosts from "@/utils/allPosts";
 import getTagsFromPosts from "@/utils/getTagsFromPosts";
 import { GetStaticProps } from "next";
-import { Fragment } from "react";
 
 interface Props {
   tags: Tag[];

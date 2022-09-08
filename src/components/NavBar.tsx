@@ -11,7 +11,7 @@ const NavBar = () => {
     console.log(router.pathname);
     return nav.items.map((link) => ({
       ...link,
-      isActive: router.pathname.match(link.match),
+      isActive: link.match && router.pathname.match(link.match),
     }));
   }, [router]);
 
