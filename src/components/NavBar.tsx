@@ -2,7 +2,7 @@ import nav from "@/data/nav.json";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 const NavBar = () => {
   const router = useRouter();
