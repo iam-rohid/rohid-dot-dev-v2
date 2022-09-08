@@ -13,7 +13,9 @@ const SEO = (props: SEOProps) => {
   const { title, description, keywords, image } = props;
   const router = useRouter();
   const KEYWORDS = useMemo(
-    () => (typeof keywords === "string" ? keywords : keywords?.join(", ")),
+    () =>
+      (typeof keywords === "string" ? keywords : keywords?.join(", ")) +
+      ",rohid,dev,rohidul islam,programmer,coding,developer,react,nextjs,typescript,blog,portfolio",
     [keywords]
   );
   const TITLE = useMemo(() => `${title ? `${title} - ` : ""}Rohid`, [title]);

@@ -14,7 +14,6 @@ const MyDocument = () => {
         <Script
           id="google-analytics"
           strategy="lazyOnload"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
