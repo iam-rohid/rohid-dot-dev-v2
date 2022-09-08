@@ -30,7 +30,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
               title="Featured Posts"
               action={{
                 label: "See all",
-                href: "/featured",
+                href: "/blog",
               }}
             />
             <PostGrid posts={featuredPosts} />
@@ -42,7 +42,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
                   title="Recent Posts"
                   action={{
                     label: "See all",
-                    href: "/recent",
+                    href: "/blog",
                   }}
                 />
                 <PostsList posts={recentPosts} />
