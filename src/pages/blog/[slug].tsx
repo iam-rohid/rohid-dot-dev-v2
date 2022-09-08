@@ -12,6 +12,7 @@ import TagsList from "@/components/TagsList";
 import Image from "next/image";
 import Breadcrumb from "@/components/Breadcrumb";
 import MDXComponents from "@/components/mdx-components/MDXComponents";
+import SEO from "@/components/SEO";
 
 interface Props {
   post: Post;
@@ -35,6 +36,12 @@ const PostPage: CustomNextPage<Props> = (props) => {
 
   return (
     <main>
+      <SEO
+        title={post.title}
+        description={post.description}
+        image={post.coverPhoto}
+      />
+
       <header className="my-16">
         <div className="mx-auto max-w-4xl gap-8 px-8">
           <Breadcrumb data={breadcrumb} />
@@ -49,7 +56,9 @@ const PostPage: CustomNextPage<Props> = (props) => {
               <Image
                 src={post.coverPhoto}
                 alt={`${post.title} Cover Photo`}
-                layout="fill"
+                layout="fixed"
+                width={864}
+                height={486}
                 objectFit="cover"
               />
             </figure>

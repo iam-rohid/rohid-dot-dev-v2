@@ -5,11 +5,13 @@ import { CustomAppProps } from "@/types/next";
 import { useAtom } from "jotai";
 import Head from "next/head";
 import { Fragment, useEffect } from "react";
+import { useRouter } from "next/router";
+import * as gtag from "@/lib/gtag";
 
 function MyApp({ Component, pageProps }: CustomAppProps) {
   const [theme] = useAtom(themeAtom);
-
   const getLayout = Component.getLayout ?? ((page) => page);
+  const router = useRouter();
 
   useEffect(() => {
     document.documentElement.classList.toggle(
@@ -17,6 +19,16 @@ function MyApp({ Component, pageProps }: CustomAppProps) {
       theme.colorScheme === "dark"
     );
   }, [theme]);
+
+  useEffect(() => {
+    const routeChanged = (e: URL) => {
+      gtag.pageview(e);
+    };
+    router.events.on("routeChangeComplete", routeChanged);
+    return () => {
+      router.events.off("routeChangeComplete", routeChanged);
+    };
+  }, [router]);
 
   return (
     <Fragment>

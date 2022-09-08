@@ -1,6 +1,7 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import PostsList from "@/components/PostsList";
 import SectionTitleBar from "@/components/SectionTitleBar";
+import SEO from "@/components/SEO";
 import { Post } from "@/contentlayer/generated";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
@@ -29,6 +30,7 @@ const breadcrumb = [
 const TagPage: CustomNextPage<Props> = ({ tag, posts }) => {
   return (
     <main>
+      <SEO title={tag.title} />
       <header className="my-16">
         <div className="mx-auto w-full max-w-3xl px-8">
           <Breadcrumb data={breadcrumb} />

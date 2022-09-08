@@ -1,9 +1,11 @@
+import SEO from "@/components/SEO";
 import BaseLayout from "@/layouts/BaseLayout";
 import { CustomNextPage } from "@/types/next";
 
 const NewsletterPage: CustomNextPage = () => {
   return (
     <main>
+      <SEO title="Newsletter" />
       <section className="my-16">
         <div className="mx-auto w-full max-w-3xl px-8">
           <iframe

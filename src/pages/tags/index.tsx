@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import TagsList from "@/components/TagsList";
 import BaseLayout from "@/layouts/BaseLayout";
 import { Tag } from "@/models/tag";
@@ -14,6 +15,8 @@ const TagsPage: CustomNextPage<Props> = (props) => {
   const { tags } = props;
   return (
     <main>
+      <SEO title="Tags" />
+
       <header className="my-16">
         <div className="mx-auto w-full max-w-3xl px-8">
           <h1 className="mb-1 text-3xl font-bold">Tag</h1>

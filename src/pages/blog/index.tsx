@@ -10,6 +10,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 import { compareAsc, compareDesc } from "date-fns";
 import featured from "@/data/featured.json";
+import SEO from "@/components/SEO";
 interface Props {
   posts: Post[];
 }
@@ -121,6 +122,8 @@ const PostsPage: CustomNextPage<Props> = (props) => {
 
   return (
     <main>
+      <SEO title="Blog" />
+
       <header className="my-16">
         <div className="mx-auto w-full max-w-3xl px-8">
           <div className="mb-8">

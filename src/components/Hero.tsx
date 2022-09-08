@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SocialLinks from "./SocialLinks";
+import * as gtag from "@/lib/gtag";
 
 const Hero = () => {
   return (
@@ -22,6 +23,14 @@ const Hero = () => {
               target="_blank"
               rel="noreferrer"
               className="flex h-10 items-center justify-center rounded-md px-4 font-medium text-priamry-400 ring-2 ring-priamry-400 transition-all duration-300 hover:bg-priamry-400 hover:text-gray-900 hover:ring-0"
+              onClick={() =>
+                gtag.event({
+                  action: "contact_me_clicked",
+                  category: "click",
+                  label: `Contact Me Clicked ${new Date().toISOString()}`,
+                  value: 1,
+                })
+              }
             >
               Contact Me
             </a>

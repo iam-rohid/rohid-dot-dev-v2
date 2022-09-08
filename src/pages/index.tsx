@@ -11,6 +11,7 @@ import PostsGrid from "@/components/PostsGrid";
 import PostsList from "@/components/PostsList";
 import SectionTitleBar from "@/components/SectionTitleBar";
 import TagsList from "@/components/TagsList";
+import SEO from "@/components/SEO";
 
 interface Props {
   recentPosts: Post[];
@@ -22,6 +23,7 @@ const HomePage: CustomNextPage<Props> = (props) => {
   const { recentPosts, featuredTags, featuredPosts } = props;
   return (
     <>
+      <SEO title="Home" />
       <Hero />
       <main className="my-16">
         <div className="mx-auto w-full max-w-5xl space-y-16 px-8">
