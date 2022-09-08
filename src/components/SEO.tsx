@@ -22,7 +22,7 @@ const SEO = (props: SEOProps) => {
     () =>
       image
         ? image.startsWith("/")
-          ? window.location.origin + image
+          ? `https://rohid.dev${image}`
           : image
         : undefined,
     [image]
