@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import SocialLinks from "./SocialLinks";
 
 const Hero = () => {
@@ -33,7 +32,7 @@ const Hero = () => {
         <div className="relative h-40 w-40">
           <div className="absolute -inset-2 rounded-full bg-gradient-to-br from-priamry-300 to-priamry-500"></div>
           <Image
-            src="https://pbs.twimg.com/profile_images/1481868973537132544/0NSx-X8V_400x400.jpg"
+            src="/images/profile-pic.jpg"
             layout="fill"
             objectFit="cover"
             alt="Rohid - Profile Pic"

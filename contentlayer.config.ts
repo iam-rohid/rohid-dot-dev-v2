@@ -1,7 +1,7 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import readingTime from "reading-time";
 import remarkToc from "remark-toc";
-import highlight from "rehype-highlight";
+import remarkPrism from "remark-prism";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -31,7 +31,7 @@ export default makeSource({
   contentDirPath: "contents",
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkToc],
-    rehypePlugins: [highlight],
+    remarkPlugins: [remarkPrism, remarkToc],
+    rehypePlugins: [],
   },
 });

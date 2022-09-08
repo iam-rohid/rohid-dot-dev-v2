@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/prism.css";
 import { themeAtom } from "@/stores/theme";
 import { CustomAppProps } from "@/types/next";
 import { useAtom } from "jotai";
