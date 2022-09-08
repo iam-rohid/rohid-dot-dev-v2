@@ -1,7 +1,8 @@
 {
   "posts": [
     "top-10-vs-code-extensions-for-react",
-    "nextjs-setup-with-typescript-and-tailwindcss"
+    "nextjs-setup-with-typescript-and-tailwindcss",
+    "nextjs-with-typescript"
   ],
   "tags": [
     "typescript",

@@ -27,7 +27,7 @@ const NavBar = () => {
   return (
     <Fragment>
       <nav className="h-16">
-        <div className="mx-auto flex h-full max-w-4xl items-center gap-8 px-8">
+        <div className="mx-auto flex h-full max-w-5xl items-center gap-8 px-8">
           <ul className="flex h-full flex-1 items-center justify-end gap-8">
             {links.map((item) => (
               <li key={item.link}>

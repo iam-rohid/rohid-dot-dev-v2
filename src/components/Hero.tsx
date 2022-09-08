@@ -4,7 +4,7 @@ import SocialLinks from "./SocialLinks";
 const Hero = () => {
   return (
     <header className="my-32">
-      <div className="mx-auto flex max-w-4xl flex-col-reverse items-center gap-16 px-8 md:flex-row">
+      <div className="mx-auto flex max-w-5xl flex-col-reverse items-center gap-16 px-8 md:flex-row">
         <div className="flex flex-1 flex-col items-center text-center md:items-start md:text-left">
           <h1 className="leading-loose">
             <span className="text-5xl font-bold">Hi 👋</span>
