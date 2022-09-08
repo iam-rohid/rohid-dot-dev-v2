@@ -11,6 +11,7 @@ import SectionTitleBar from "@/components/SectionTitleBar";
 import TagsList from "@/components/TagsList";
 import Image from "next/image";
 import Breadcrumb from "@/components/Breadcrumb";
+import MDXComponents from "@/components/mdx-components/MDXComponents";
 
 interface Props {
   post: Post;
@@ -58,7 +59,7 @@ const PostPage: CustomNextPage<Props> = (props) => {
       <section className="my-16">
         <div className="mx-auto flex max-w-4xl gap-8 px-8">
           <article className="prose prose-invert mx-auto min-w-0 max-w-2xl flex-1 prose-pre:-ml-4 prose-pre:w-[calc(100%+2rem)] prose-pre:rounded-lg prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900 prose-pre:text-base">
-            <MDXContent />
+            <MDXContent components={MDXComponents} />
           </article>
           <aside className="hidden w-56 space-y-8 lg:block">
             <section id="tags">
