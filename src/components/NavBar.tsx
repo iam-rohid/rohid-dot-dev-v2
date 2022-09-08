@@ -5,19 +5,13 @@ import { useRouter } from "next/router";
 import { useEffect, useMemo, useState } from "react";
 
 const NavBar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
   const router = useRouter();
   const links = useMemo(() => {
-    console.log(router.pathname);
     return nav.items.map((link) => ({
       ...link,
       isActive: link.match && router.pathname.match(link.match),
     }));
   }, [router]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("overflow-hidden", showSidebar);
-  }, [showSidebar]);
 
   return (
     <nav className="h-16">
