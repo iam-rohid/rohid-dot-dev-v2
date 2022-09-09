@@ -18,6 +18,12 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               </a>
             </Link>
             <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-gray-300">
+              {post.draft && (
+                <>
+                  <span>Draft</span>
+                  <span>•</span>
+                </>
+              )}
               <span>{format(new Date(post.date), "MMM dd, yyy")}</span>
               <span>·</span>
               <span>{post.readingTime}</span>

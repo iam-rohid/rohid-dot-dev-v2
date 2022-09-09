@@ -1,0 +1,25 @@
+---
+draft: true
+title: Integrate Google Analytics in Next.js
+description: In this article we are going to take a look at how we can integrate Google Analytics in a Next.js project
+date: 2022-09-08
+tags:
+  - nextjs
+coverPhoto: /images/blog/integrate-google-analytics-to-nextjs.png
+---
+
+Hi guys 👋
+
+In this article, we will be integrating **Google Analytics** into a **Next.js** project.
+
+If you don't know what google analytics is, **Google Analytics** helps you track how many users are visiting your website, what they are doing on your website, how your users interacting with your website, is your features are working for real-world users or even your users know about your newly added feature, etc.
+
+I'm not an analytics guy. I don't understand data, numbers, or anything like that, I'm a visual person. But analytics is something that you have to deal with at some point in your journey. After creating this blog website I needed to know how many users are visiting this website, what articles are doing well and what are not, where are the majority of my users coming from, etc.
+
+If you use a blogging platform like [medium](https://medium.com), [dev.to](https://dev.to) or [hashnode](https://hashnode.com) they by default gives you analytics out of the box. You don't have to worry about analytics. But when you run your own blog you need to integrate analytics by yourself.
+
+Adding Google Analytics to a WordPress website or to a simple HTML website is pretty easy because you just needed to paste some script tags on the head tag of your HTML document. But for Next.js it's a bit different. Because Next.js uses **SSR** or **Server Side Rendering**, it generates each page when the server gets a request from the client. And also Next.js uses its own router after the first page is loaded. Because of this when you switch between your pages it won't trigger the `page_view` event on Google Analytics. It will only trigger the event once when the page gets loaded for the first time. To solve this problem we have to manually call the `page_view` event on route changes. If it seems scary to you then please don't be scared it's pretty simple to do, I'm just telling you all these so that you can understand why we can't just paste some script and call it a day.
+
+BTW what script am I talking about? We haven't seen any script yet. Let's register a project on Google Analytics and grab the script.
+
+## Register a project on Google analytics

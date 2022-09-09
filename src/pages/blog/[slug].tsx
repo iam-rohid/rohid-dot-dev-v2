@@ -47,6 +47,12 @@ const PostPage: CustomNextPage<Props> = (props) => {
           <Breadcrumb data={breadcrumb} />
           <h1 className="mb-1 text-3xl font-bold">{post.title}</h1>
           <div className="inline-flex gap-x-2 text-gray-300">
+            {post.draft && (
+              <>
+                <span>Draft</span>
+                <span>•</span>
+              </>
+            )}
             <span>{format(new Date(post.date), "MMM dd, yyyy")}</span>
             <span>•</span>
             <span>{post.readingTime}</span>
@@ -56,9 +62,7 @@ const PostPage: CustomNextPage<Props> = (props) => {
               <Image
                 src={post.coverPhoto}
                 alt={`${post.title} Cover Photo`}
-                layout="fixed"
-                width={864}
-                height={486}
+                layout="fill"
                 objectFit="cover"
               />
             </figure>
